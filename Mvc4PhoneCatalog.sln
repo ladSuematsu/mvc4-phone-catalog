@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Web
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mvc4PhoneCatalog", "Mvc4PhoneCatalog\Mvc4PhoneCatalog.csproj", "{5A581B3D-4E19-4077-A3D5-38B8CC5BDEF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mvc4PhoneCatalog.Models", "Mvc4PhoneCatalog.Model\Mvc4PhoneCatalog.Models.csproj", "{9D30E2C3-B976-4516-9DFF-682887BB414F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mvc4PhoneCatalog.Data", "Mvc4PhoneCatalog.Data\Mvc4PhoneCatalog.Data.csproj", "{2034238C-D5D6-48F8-87E8-9196DFA18663}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{C9D5EA08-31C1-4BE4-BE8B-97D4A9760889}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5A581B3D-4E19-4077-A3D5-38B8CC5BDEF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A581B3D-4E19-4077-A3D5-38B8CC5BDEF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A581B3D-4E19-4077-A3D5-38B8CC5BDEF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A581B3D-4E19-4077-A3D5-38B8CC5BDEF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D30E2C3-B976-4516-9DFF-682887BB414F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D30E2C3-B976-4516-9DFF-682887BB414F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D30E2C3-B976-4516-9DFF-682887BB414F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D30E2C3-B976-4516-9DFF-682887BB414F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2034238C-D5D6-48F8-87E8-9196DFA18663}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2034238C-D5D6-48F8-87E8-9196DFA18663}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2034238C-D5D6-48F8-87E8-9196DFA18663}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2034238C-D5D6-48F8-87E8-9196DFA18663}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

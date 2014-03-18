@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Mvc4PhoneCatalog.Models.Phone>
+
+@{
+    ViewBag.Title = "SearchPhone";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ShowPhone</h2>
+
+<form method="get">
+    <input type="search" name="searchTerm" />
+    <input type="submit" value="GO!" />
+</form>
+
+<fieldset>
+    <legend>Phone</legend>
+
+    @foreach(var item in Model)
+    {
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Brand)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(modelItem => item.Brand)
+        </div>
+
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.ModelName)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(modelItem => item.ModelName)
+        </div>
+
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.ModelCode)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(modelItem => item.ModelCode)
+        </div>
+
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.LaunchYear)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(modelItem => item.LaunchYear)
+        </div>
+
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.OperatingSystem)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(modelItem => item.OperatingSystem)
+        </div>
+
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Price)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(modelItem => item.Price)
+        </div>
+    }
+</fieldset>
+@*<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>*@

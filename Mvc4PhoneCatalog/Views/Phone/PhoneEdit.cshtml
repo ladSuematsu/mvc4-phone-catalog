@@ -1,0 +1,78 @@
+﻿@model Mvc4PhoneCatalog.Models.Phone
+
+@{
+    ViewBag.Title = "PhoneEdit";
+}
+
+<h2>PhoneEdit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Phone</legend>
+
+        @Html.HiddenFor(model => model.ID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Brand)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Brand)
+            @Html.ValidationMessageFor(model => model.Brand)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ModelName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ModelName)
+            @Html.ValidationMessageFor(model => model.ModelName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ModelCode)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ModelCode)
+            @Html.ValidationMessageFor(model => model.ModelCode)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LaunchYear)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LaunchYear)
+            @Html.ValidationMessageFor(model => model.LaunchYear)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OperatingSystem)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.OperatingSystem)
+            @Html.ValidationMessageFor(model => model.OperatingSystem)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Price)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Price)
+            @Html.ValidationMessageFor(model => model.Price)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Mvc4PhoneCatalog.Models.Phone>
+
+@{
+    ViewBag.Title = "ListPhones";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ListPhones</h2>
+
+@if (Model.Count() < 1)
+{
+    <p>There are no items in the database.</p>
+}
+else
+{
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Brand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModelName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModelCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LaunchYear)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OperatingSystem)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModelName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModelCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LaunchYear)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OperatingSystem)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+    @*        <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            </td>*@
+        </tr>
+    }
+
+    </table>
+}

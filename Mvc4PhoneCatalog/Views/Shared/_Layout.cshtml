@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/bootstrapcss")
+        @*@Scripts.Render("~/bundles/modernizr")*@
+    </head>
+    <body>
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+            @*  <div class="float-left">
+                <p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
+            </div>*@
+            @*<div class="float-right">*@
+    @*                            <section id="login">
+                    @Html.Partial("_LoginPartial")
+                </section>*@
+                <ul id="menu" class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Phone","SearchPhone","Phone")</li>
+                    <li>@Html.ActionLink("Phone List","ListPhones","Phone")</li>
+                    <li>@Html.ActionLink("Phone Insert","PhoneInsert","Phone")</li>
+                </ul>
+            @*</div>*@
+            </div>
+        </div>
+        <div class="container">
+            @RenderSection("featured", required: false)
+            <div class="jumbotron">
+                @RenderBody()
+            </div>
+        </div>
+      @*  <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
+                </div>
+            </div>
+        </footer>*@
+        
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/jquery.unobtrusive-ajax")
+        @Scripts.Render("~/bundles/bootstrapjs")
+        @RenderSection("scripts", required: false)
+        @Html.RenderScripts()
+    </body>
+</html>

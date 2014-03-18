@@ -1,0 +1,109 @@
+﻿@model IEnumerable<Mvc4PhoneCatalog.Models.Phone>
+
+@{
+    ViewBag.Title = "SearchPhone";
+}
+
+<h2>SearchPhone</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+
+<form method="get">
+    <input type="text" name="searchTerm" />
+    <input type="submit" value="GO!" />
+</form>
+
+@if(Request.QueryString.Count < 1)
+{
+    <p>Insert search input</p>
+}
+else
+{
+    if (Model.Count() < 1)
+    {
+        <p>Search retured no results.</p>   
+    }
+    else
+    {
+        <table class=".listTable">
+            <tr>
+                <th>
+                    @*@Html.DisplayNameFor(model => model.Brand)*@
+                    Brand
+                </th>
+                <th>
+                    @*@Html.DisplayNameFor(model => model.ModelName)*@
+                    Model Name
+                </th>
+                <th>
+                    @*@Html.DisplayNameFor(model => model.ModelCode)*@
+                    Model Code
+                </th>
+                <th>
+                    @*@Html.DisplayNameFor(model => model.LaunchYear)*@
+                    Launch Year
+                </th>
+                <th>
+                    @*@Html.DisplayNameFor(model => model.OperatingSystem)*@
+                    Operating System
+                </th>
+                <th>
+                    @*@Html.DisplayNameFor(model => model.Price)*@
+                    Price
+                </th>
+                <th></th>
+            </tr>
+
+        @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Brand)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModelName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModelCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LaunchYear)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OperatingSystem)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+               <td>
+                    @*@Html.ActionLink("Edit", "Edit", new { id=item.ID }) |*@
+                    @*@Html.ActionLink("Details", "PhoneDetails", new { id=item.ID })*@
+                    @Ajax.ActionLink("Details", "PhoneDetails", new {id=item.ID},
+                   new AjaxOptions() { UpdateTargetId = "modal-container", InsertionMode = InsertionMode.Replace, HttpMethod = "POST",
+                                       LoadingElementId = "busycycle", OnComplete="showDetail"
+                   })
+
+                    @*@Html.ActionLink("Delete", "Delete", new { id=item.ID })*@
+                </td>
+            </tr>
+        }
+
+        </table>    
+    
+    <div id="modal-container"></div>
+    
+    }
+    
+    @section Scripts
+    {
+        <script type="text/javascript">
+
+            function showDetail()
+            {
+                $('#modal-mock').modal('show');
+            }
+
+        </script>             
+    }    
+}

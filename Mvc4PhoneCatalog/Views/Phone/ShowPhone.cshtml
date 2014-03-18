@@ -1,0 +1,58 @@
+﻿@model Mvc4PhoneCatalog.Models.Phone
+
+@{
+    ViewBag.Title = "ShowPhone";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ShowPhone</h2>
+
+<fieldset>
+    <legend>Phone</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Brand)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Brand)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ModelName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ModelName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ModelCode)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ModelCode)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LaunchYear)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LaunchYear)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OperatingSystem)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OperatingSystem)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Price)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Price)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
