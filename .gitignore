@@ -130,8 +130,8 @@ UpgradeLog*.XML
 UpgradeLog*.htm
 
 # SQL Server files
-App_Data/*.mdf
-App_Data/*.ldf
+Mvc4PhoneCatalog/App_Data/*.mdf
+Mvc4PhoneCatalog/App_Data/*.ldf
 
 # =========================
 # Windows detritus
@@ -149,3 +149,7 @@ $RECYCLE.BIN/
 
 # Mac crap
 .DS_Store
+
+# =========================
+# Database files
+# =========================
