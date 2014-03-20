@@ -65,10 +65,10 @@ namespace Mvc4PhoneCatalog.Controllers
         }
 
         [HttpGet]
-        public ActionResult PhoneInsert()
+        public PartialViewResult PhoneInsert()
         {
 
-            return View();
+            return PartialView();
         }
 
         [HttpPost]
@@ -100,7 +100,7 @@ namespace Mvc4PhoneCatalog.Controllers
         {
             Models.Phone phone = _db.PhoneSearch(id);
             
-            return View(phone);
+            return PartialView("_PhoneEdit", phone);
         }
 
         [HttpPost]

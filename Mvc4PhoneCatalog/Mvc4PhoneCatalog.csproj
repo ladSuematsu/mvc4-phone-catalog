@@ -277,6 +277,7 @@
     <Content Include="Views\Phone\SearchPhone.cshtml" />
     <Content Include="Views\Shared\GenericModal.cshtml" />
     <Content Include="Views\Phone\_PhoneDetails.cshtml" />
+    <Content Include="Views\Phone\_PhoneEdit.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
