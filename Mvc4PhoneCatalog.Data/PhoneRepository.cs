@@ -110,7 +110,7 @@ namespace Mvc4PhoneCatalog.Data
             {
                 Phone original = _db.Phone.Find(phone.ID);
 
-                if (original != null)
+                if (original == null)
                 {
                     throw new Exception();
                 }

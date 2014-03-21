@@ -8,7 +8,12 @@
         <h4 class="modal-title">Modal title</h4>
       </div>
       <div class="modal-body">
-@using (Html.BeginForm()) {
+@using (@Ajax.BeginForm(null,null, new AjaxOptions(){
+    UpdateTargetId = "modal-container", Url="", InsertionMode = InsertionMode.Replace, HttpMethod = "POST",
+    LoadingElementId = "", OnComplete = "hideDetail"},
+    new { id = "edit-form"}
+    ))
+{
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
@@ -65,19 +70,15 @@
             @Html.ValidationMessageFor(model => model.Price)
         </div>
 
-@*        <p>
+        <p>
             <input type="submit" value="Save" />
-        </p>*@
+        </p>
     </fieldset>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
          </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" onclick="location.href= @Url.Action("Save", "Edit)>Save changes</button>
+        <button type="button" id="button-save" class="btn btn-primary" onclick="testFunction(); return false;">Save changes</button>
       </div>
  
     </div><!-- /.modal-content -->
